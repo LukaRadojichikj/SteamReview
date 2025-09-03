@@ -1,0 +1,32 @@
+[
+  {
+    "sentiment": "pos",
+    "tldr": "Undertale is the greatest indie game of all time.",
+    "author": "76561198220071999",
+    "recommended": true
+  },
+  {
+    "sentiment": "pos",
+    "tldr": "This game is a masterpiece of interactive art, deeply moving.",
+    "author": "76561198381931425",
+    "recommended": true
+  },
+  {
+    "sentiment": "pos",
+    "tldr": "Amazing story, multiple endings, and high replay value make this a must-play.",
+    "author": "76561199215067590",
+    "recommended": true
+  },
+  {
+    "sentiment": "mixed",
+    "tldr": "Comedy landed more than it missed, still worth time.",
+    "author": "76561199108876190",
+    "recommended": true
+  },
+  {
+    "sentiment": "pos",
+    "tldr": "This game inspired me to learn piano and play its music.",
+    "author": "76561199095886254",
+    "recommended": true
+  }
+]
