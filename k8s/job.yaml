@@ -1,0 +1,38 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: steam-snapshots-job
+  labels:
+    app: steam-snapshots
+spec:
+  backoffLimit: 1
+  ttlSecondsAfterFinished: 600
+  template:
+    metadata:
+      labels:
+        app: steam-snapshots
+    spec:
+      restartPolicy: Never
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+      containers:
+        - name: app
+          image: steam-snapshots:latest
+          imagePullPolicy: Never
+          env:
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: gemini-api
+                  key: GEMINI_API_KEY
+          args: ["Hades", "--count", "3", "--format", "json", "--fuzzy"]
+          resources:
+            requests: { cpu: "100m", memory: "128Mi" }
+            limits:   { cpu: "500m", memory: "512Mi" }
+          volumeMounts:
+            - name: cache
+              mountPath: /app/.cache
+      volumes:
+        - name: cache
+          emptyDir: {}

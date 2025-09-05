@@ -23,7 +23,7 @@ def _print_table(game: str, snapshots: list[dict]) -> None:
         expand=True,
         box=box.SIMPLE_HEAVY,
     )
-    table.add_column("Rec?", no_wrap=True, ratio=1)             # NEW
+    table.add_column("Rec?", no_wrap=True, ratio=1)            
     table.add_column("Sentiment", style="bold", no_wrap=True, ratio=1)
     table.add_column("TL;DR", overflow="fold", ratio=4)
     table.add_column("Author", no_wrap=True, ratio=2)
